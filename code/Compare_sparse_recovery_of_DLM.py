@@ -256,8 +256,10 @@ if __name__ == "__main__":
         
     res_error_df = pd.DataFrame(res_error_list)
     res_error_df.columns = ['OLS','Power 2','Power 3','Power 4','Power 5','Lasso'] #,'Power 1'
-    res_error_df.iloc[:,2:].plot()
-    plt.show()
+    res_error_df.to_csv('res_error_df.csv',index=False)
+    
+    #res_error_df.iloc[:,2:].plot()
+    #plt.show()
     
     plt.figure(figsize=(12,8),dpi=200)
     for i in range(1,6):
